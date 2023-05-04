@@ -2,4 +2,13 @@
     <string name="app_name">Learning</string>
     <string name="search_here">Search Here</string>
     <string name="go"> Go </string>
+    <string name="wifi">Wifi</string>
+    <string name="network">Network</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="select_picture">Select Picture</string>
+    <string name="forcefully_enable_permission">forcefully enable permission</string>
+    <string name="ok">ok\n</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_network_msg">no_network_msg</string>
+    <string name="something_went_wrong">something_went_wrong</string>
 </resources>

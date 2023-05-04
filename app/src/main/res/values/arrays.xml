@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image_loader">
+        <item>app_logo</item><!--app logo 0 -->
+        <item>flag</item><!--flag  1 -->
+        <item>girl</item><!--flag  2 -->
+        <item>man</item><!--flag  3 -->
+        <item>user</item><!--flag  4 -->
+        <item>other image</item><!--other image-->
+    </string-array>
+</resources>
