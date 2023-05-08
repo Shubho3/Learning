@@ -12,7 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-const val BASE_URL = "https://myasp-app.com/vibras/webservice/"
+//const val BASE_URL = "https://myasp-app.com/vibras/webservice/"
+const val BASE_URL = "https://sebateks.pl/sebateks/webservice/"
 val interceptor = HttpLoggingInterceptor()
 private val httpClient = OkHttpClient.Builder()
 

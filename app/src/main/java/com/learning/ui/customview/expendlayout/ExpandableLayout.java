@@ -13,7 +13,8 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.webaddicted.kotlinproject.R;
+import com.learning.R;
+
 
 public class ExpandableLayout extends FrameLayout {
     public interface State {

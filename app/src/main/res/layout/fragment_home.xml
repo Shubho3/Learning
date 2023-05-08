@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.learning.viewModels.HomeViewModel" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.fragments.HomeFragment">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="-1dp"
+                    android:background="@color/purple_500"
+                    android:fillViewport="true"
+                    tools:ignore="SpeakableTextPresentCheck">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/top"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_120sdp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+                            <RelativeLayout
+                                android:id="@+id/top1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:gravity="start">
+                                <ImageView
+                                    android:id="@+id/logo"
+                                    android:layout_width="@dimen/_120sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:layout_centerHorizontal="true"
+                                    android:padding="@dimen/_4sdp"
+                                    android:src="@drawable/ic_launcher_foreground" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_25sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_25sdp"
+                                android:background="@drawable/background_edit"
+                                >
+                                <EditText
+                                    android:id="@+id/edt_email"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                      android:background="@null"
+                                    android:textColorHint="@color/texts"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:hint="email"
+                                    android:inputType="textEmailAddress"
+                                    android:padding="@dimen/_10sdp"
+                                    android:textColor="@color/texts"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_25sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_25sdp"
+                                android:background="@drawable/background_edit"
+                                >
+                            <EditText
+                                android:id="@+id/edt_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:textColorHint="@color/texts"
+                                android:fontFamily="@font/poppinsregular"
+                                android:hint="password"
+                                android:inputType="textPassword"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@color/texts"
+                                android:textSize="@dimen/_12sdp" />
+                            </LinearLayout>
+
+
+                            <com.kusu.loadingbutton.LoadingButton
+                                android:id="@+id/btn_submit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_40sdp"
+                                android:layout_marginStart="@dimen/_25sdp"
+                                android:layout_marginEnd="@dimen/_25sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:elevation="@dimen/_3sdp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:outlineProvider="background"
+                                android:padding="@dimen/_10sdp"
+                                android:text="next"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold"
+                                app:lb_buttonColor="@color/purple_200"
+                                app:lb_isShadowEnable="true"
+                                app:lb_isCircular="true"
+                                app:lb_loaderColor="@color/purple_500"
+                                app:lb_shadowColor="@color/purple_700"
+                                app:lb_shadowHeight="1dp"
+                                app:lb_cornerRadius="@dimen/_15sdp"/>
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+    </FrameLayout>
+</layout>
