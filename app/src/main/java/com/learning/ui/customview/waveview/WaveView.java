@@ -9,7 +9,8 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.webaddicted.kotlinproject.R;
+import com.learning.R;
+
 
 /**
  * Created by Deepak Sharma (webaddicted) on 2019/10/15.

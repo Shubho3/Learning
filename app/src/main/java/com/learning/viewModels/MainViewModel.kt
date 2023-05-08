@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(private val retrofitInstance: APIService , private  val sharedPrf: SharedPrf) : ViewModel() {
-
    val responseContainer = MutableLiveData<IMDB>()
    val errorMessage = MutableLiveData<String>()
    val isShowProgress = MutableLiveData<Boolean>()

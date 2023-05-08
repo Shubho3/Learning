@@ -8,7 +8,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.webaddicted.kotlinproject.R;
+import com.learning.R;
+
 
 /**
  * Created by Deepak Sharma (webaddicted) on 2019/10/15.
