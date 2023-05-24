@@ -42,7 +42,6 @@ class HomeViewModel @Inject constructor(private val retrofitInstance: APIService
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     Log.e(TAG, "login: "+response.body() )
-
                     responseContainer.postValue(response.body())
                     //repository.insertUser(responseContainer.value?.result!!)
                     isShowProgress.value = false

@@ -21,7 +21,7 @@ import com.learning.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity   : Fragment() {
+class MainActivity: Fragment() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var moviesAdapter : MoviesRecyclerAdapter
     private lateinit var mainViewModel: MainViewModel
@@ -30,8 +30,7 @@ class MainActivity   : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ):
-            View {
+    ): View {
         activityMainBinding = DataBindingUtil.inflate(inflater, R.layout.activity_main, container, false)
         setUpViewModel()
         sharedPrf = SharedPrf(requireContext())
@@ -39,10 +38,7 @@ class MainActivity   : Fragment() {
         mainViewModel.getMoviesFromAPI("x")
         mainViewModel.responseContainer.observe(requireActivity(), Observer {
             if (it != null){
-
                 moviesAdapter.result = it.result
-            //    activityMainBinding.validationTextForSearch.visibility = View.GONE
-
             }else{
                 Toast.makeText(requireContext(), "There is some error!", Toast.LENGTH_SHORT).show()
             }
