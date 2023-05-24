@@ -9,6 +9,7 @@ class Const  {
 
        const val API_KEY = "x"
        const val USER_ID = "user_id"
+       const val TOKEN = "token"
    }
 
 }

@@ -22,7 +22,8 @@ import kotlinx.coroutines.withContext
 import java.util.HashMap
 import javax.inject.Inject
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val retrofitInstance: APIService, private  val sharedPrf: SharedPrf)
+class HomeViewModel @Inject constructor(private val retrofitInstance: APIService,
+                                        private  val sharedPrf: SharedPrf)
     : ViewModel() {
     val responseContainer = MutableLiveData<LoginDto>()
     val errorMessage = MutableLiveData<String>()
@@ -41,6 +42,7 @@ class HomeViewModel @Inject constructor(private val retrofitInstance: APIService
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     Log.e(TAG, "login: "+response.body() )
+
                     responseContainer.postValue(response.body())
                     //repository.insertUser(responseContainer.value?.result!!)
                     isShowProgress.value = false

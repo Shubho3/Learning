@@ -2,6 +2,7 @@ package com.learning.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,6 @@ import com.learning.databinding.ActivityMainBinding
 import com.learning.utills.SharedPrf
 import com.learning.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity   : Fragment() {
@@ -35,13 +35,12 @@ class MainActivity   : Fragment() {
         activityMainBinding = DataBindingUtil.inflate(inflater, R.layout.activity_main, container, false)
         setUpViewModel()
         sharedPrf = SharedPrf(requireContext())
-        sharedPrf.setStoredTag(USER_ID,"1136")
         setUpRecyclerView()
         mainViewModel.getMoviesFromAPI("x")
         mainViewModel.responseContainer.observe(requireActivity(), Observer {
             if (it != null){
 
-                moviesAdapter.result = it.results
+                moviesAdapter.result = it.result
             //    activityMainBinding.validationTextForSearch.visibility = View.GONE
 
             }else{
@@ -88,5 +87,4 @@ return  activityMainBinding.root
     private fun setUpViewModel(){
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
     }
-
 }

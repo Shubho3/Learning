@@ -10,12 +10,16 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 interface APIService {
-    @FormUrlEncoded
+/*    @FormUrlEncoded
 @POST("search")
   suspend fun imdbFunction(
        @Field("search") APIKey : String,
        @Field("user_id") searchExpression : String,
-   ) : Response<IMDB>
+   ) : Response<IMDB>*/
+  @FormUrlEncoded
+@POST("get_managerList")
+  suspend fun get_managerList(
+      @FieldMap params: Map<String, String>) : Response<IMDB>
     @FormUrlEncoded
     @POST("login")
     suspend  fun login(@FieldMap params: Map<String, String>): Response<LoginDto>

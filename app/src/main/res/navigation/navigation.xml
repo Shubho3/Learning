@@ -26,6 +26,8 @@
             android:id="@+id/action_homeFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <action
+            app:popUpToInclusive="true"
+            app:popUpTo="@navigation/navigation"
             android:id="@+id/action_homeFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
     </fragment>
