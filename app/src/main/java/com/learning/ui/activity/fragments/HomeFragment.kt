@@ -30,19 +30,21 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ):
             View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_home, container, false)
         sharedPrf = SharedPrf(requireActivity())
         viewmodel = ViewModelProvider(this)[HomeViewModel::class.java]
 
         viewmodel.responseContainer.observe(viewLifecycleOwner) {
             if (it.status == "1") {
                 binding.btnSubmit.hideLoading()
+                sharedPrf.setStoredTag(Const.LOGIN,"true")
                 sharedPrf.setStoredTag(Const.USER_ID,it.result.id)
                 sharedPrf.setStoredTag(Const.TOKEN,it.result.token)
                 binding.root.successSnack(it.message.toString())
-               /* Navigation.findNavController(binding.root)
+               Navigation.findNavController(binding.root)
                     .navigate(R.id.action_homeFragment_to_mainActivity)
-*/
+
             } else {
                 binding.btnSubmit.hideLoading()
                 binding.root.errorSnack(viewmodel.errorMessage.value.toString())

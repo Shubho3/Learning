@@ -8,6 +8,7 @@ class Const  {
        val IS_LOGIN ="is_login"
 
        const val API_KEY = "x"
+       const val LOGIN = "false"
        const val USER_ID = "user_id"
        const val TOKEN = "token"
    }

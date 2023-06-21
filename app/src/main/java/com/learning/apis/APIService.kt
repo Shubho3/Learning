@@ -7,7 +7,10 @@ import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 interface APIService {
 /*    @FormUrlEncoded
@@ -16,10 +19,9 @@ interface APIService {
        @Field("search") APIKey : String,
        @Field("user_id") searchExpression : String,
    ) : Response<IMDB>*/
-  @FormUrlEncoded
-@POST("get_managerList")
+@GET("get_managerList")
   suspend fun get_managerList(
-      @FieldMap params: Map<String, String>) : Response<IMDB>
+      @QueryMap params: Map<String, String>) : Response<IMDB>
     @FormUrlEncoded
     @POST("login")
     suspend  fun login(@FieldMap params: Map<String, String>): Response<LoginDto>

@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learning.R
+import com.learning.apis.Const
 import com.learning.apis.Const.Companion.USER_ID
 import com.learning.ui.adapter.MoviesRecyclerAdapter
 import com.learning.databinding.ActivityMainBinding
@@ -35,7 +36,7 @@ class MainActivity: Fragment() {
         setUpViewModel()
         sharedPrf = SharedPrf(requireContext())
         setUpRecyclerView()
-        mainViewModel.getMoviesFromAPI("x")
+        mainViewModel.getMoviesFromAPI(sharedPrf.getStoredTag(Const.USER_ID),sharedPrf.getStoredTag(Const.TOKEN))
         mainViewModel.responseContainer.observe(requireActivity(), Observer {
             if (it != null){
                 moviesAdapter.result = it.result
@@ -66,7 +67,7 @@ class MainActivity: Fragment() {
             else{
                 val searchText = activityMainBinding.searchBar.text
 
-                mainViewModel.getMoviesFromAPI(searchText.toString())
+                mainViewModel.getMoviesFromAPI(sharedPrf.getStoredTag(Const.USER_ID),sharedPrf.getStoredTag(Const.TOKEN))
 
             }
 

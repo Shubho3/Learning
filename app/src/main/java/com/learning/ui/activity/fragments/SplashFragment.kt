@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.learning.R
 import com.learning.apis.Const.Companion.IS_LOGIN
+import com.learning.apis.Const.Companion.LOGIN
 import com.learning.utills.SharedPrf
 
 class SplashFragment : Fragment() {
@@ -22,8 +23,8 @@ class SplashFragment : Fragment() {
         var v = inflater.inflate(R.layout.fragment_splash, container, false)
         sharedPref = SharedPrf(requireContext())
         Handler(Looper.getMainLooper()).postDelayed({
-            if (sharedPref.getStoredTag(IS_LOGIN).toString() == "") {
-                Navigation.findNavController(v).navigate(R.id.action_splashFragment_to_homeFragment)
+            if (sharedPref.getStoredTag(LOGIN) == "true") {
+                Navigation.findNavController(v).navigate(R.id.action_splashFragment_to_mainActivity)
             } else {
                 Navigation.findNavController(v).navigate(R.id.action_splashFragment_to_homeFragment)
             }
