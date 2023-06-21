@@ -40,9 +40,9 @@ class HomeFragment : Fragment() {
                 sharedPrf.setStoredTag(Const.USER_ID,it.result.id)
                 sharedPrf.setStoredTag(Const.TOKEN,it.result.token)
                 binding.root.successSnack(it.message.toString())
-               /* Navigation.findNavController(binding.root)
+               Navigation.findNavController(binding.root)
                     .navigate(R.id.action_homeFragment_to_mainActivity)
-*/
+
             } else {
                 binding.btnSubmit.hideLoading()
                 binding.root.errorSnack(viewmodel.errorMessage.value.toString())

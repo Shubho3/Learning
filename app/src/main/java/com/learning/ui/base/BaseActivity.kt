@@ -74,6 +74,7 @@ abstract class BaseActivity(private val layoutId: Int) : AppCompatActivity(), Vi
         return placeholderArray[placeholderType]
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.trans_right_in, R.anim.trans_right_out)

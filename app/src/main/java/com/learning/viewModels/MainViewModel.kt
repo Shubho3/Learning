@@ -24,13 +24,12 @@ class MainViewModel @Inject constructor(private val retrofitInstance: APIService
        onError("Exception handled : ${throwable.localizedMessage}")
    }
 
-   fun getMoviesFromAPI(expression : String) {
+   fun getMoviesFromAPI(user_id : String,token :String) {
        isShowProgress.value = true
+
        job = viewModelScope.launch {
-         val str =   sharedPrf.getStoredTag(USER_ID)
-         val token =   sharedPrf.getStoredTag(TOKEN)
            val map :HashMap<String, String >  = HashMap()
-           map["user_id"] = str
+           map["user_id"] = user_id
            map["token"] = token
            val response = retrofitInstance.get_managerList(map)
            withContext(Dispatchers.Main) {
